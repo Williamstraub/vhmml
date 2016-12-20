@@ -1,1 +1,0 @@
-alter table reading_room_objects add column features_imported varchar(255);

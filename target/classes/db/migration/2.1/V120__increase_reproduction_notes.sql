@@ -1,1 +1,0 @@
-alter table reading_room_objects change column reproduction_notes reproduction_notes varchar(1000);

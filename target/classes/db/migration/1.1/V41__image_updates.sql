@@ -1,1 +1,0 @@
-ALTER TABLE reading_room_objects add COLUMN images_location VARCHAR(255);
