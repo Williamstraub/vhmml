@@ -1,0 +1,1 @@
+alter table reading_room_object_bib_urls change column link_text link_text varchar(500);

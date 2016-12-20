@@ -1,0 +1,9 @@
+#searchPanel {
+	width: 0px;
+    position: relative;
+    left: -350px
+}
+
+#searchPanel + .searchToggleBar {
+	display: block;
+}

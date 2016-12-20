@@ -1,0 +1,1 @@
+ALTER TABLE reading_room_content CHANGE COLUMN provisional_title provisional_title varchar(500);

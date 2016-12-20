@@ -1,0 +1,1 @@
+insert into reading_room_features values(null, 'Miniature(s)');

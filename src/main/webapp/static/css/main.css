@@ -1,0 +1,1307 @@
+html {
+   -ms-overflow-style: scrollbar;
+}
+
+body {
+	color: #fff;
+	background-color: #333;
+	font-size: 16px;
+	margin: auto;
+	/* font-family: "Noto Sans", Arial, Helvetica, sans-serif; */
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+	overflow-y: visible !important; /* mirador tries to override this with hidden, annoying */
+}
+
+.page-wrap {
+	color: #333;
+	background-color: #f1f1f1;
+}
+
+.page-banner {
+	padding: 30px;
+}
+
+.section-title {
+	font-family: 'Libre Baskerville', serif;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #999;
+	font-weight: normal
+}
+
+h1, h2, h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-weight: normal;
+}
+
+h3.section-title, h4.section-title {
+	text-decoration: none;	
+}
+
+hr.thick {
+	padding-bottom: 3px;
+	margin: 10px 0;
+	clear: both;
+}
+
+.error-code {
+	color: #999;
+	text-align: center;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	font-weight: normal;
+	margin-top: 40px;
+	margin-bottom: 17px;
+}
+
+header {
+	background-color: #000;
+	color: #fff;	
+	height: 80px;
+	line-height: 48px;
+	text-align: center;		
+}
+
+header h1 {	
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	display: inline;
+}
+
+header .logo {
+	float: left;
+	padding: 12px 0 7px 15px;
+}
+
+header .logo img {
+	vertical-align: inherit;
+}
+
+.jumptarget::before, .jumptarget-breadcrumbs::before {
+  content: "";
+  display: block;
+  height: 80px; /* fixed header height*/
+  margin: -80px 0 0; /* negative fixed header height */
+}
+
+.jumptarget-breadcrumbs::before {
+  height: 140px; /* fixed header height*/
+  margin: -140px 0 0; /* negative fixed header height */
+}
+
+.breadcrumb-buttons {
+	display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    position: relative;
+    right: 12px;
+}
+
+label {
+	margin: 0;
+}
+
+table {
+	table-layout:fixed;
+}
+
+.table-nowrap td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-list {
+	min-height: 400px;
+}
+
+.flex {
+	flex: 1;
+}
+
+img.responsive {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.img-thumbnail {
+	border-radius: 0;
+}
+
+em.highlight {
+	background-color: #ffcc33;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.table-row-caption {
+	font-size: 12px;
+	position: absolute;
+	margin-top: 10px;
+}
+
+tr.disabled {
+	color: #ccc;
+}
+
+tr.disabled label {
+	font-weight: normal;
+}
+
+.vertical-align-helper {
+	display: inline-block; 
+	height: 100%; 
+	vertical-align: middle;
+}
+
+a, a:hover {
+	color: #428bca;
+	text-decoration: none;
+}
+
+a.white {
+	color: #fff;
+}
+
+span.white-link {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+span.white-link:hover {
+	border-bottom: 1px solid #444;
+}
+
+p {
+	padding-top: 15px;
+}
+
+/* we have our own because bootstrap's hidden class has !important which breaks jquery show/hide */
+.vhmml-hide {
+	display: none;
+}
+
+/*** NAV ***/
+.menu-button, .hamburger-button {
+	float: right;
+	cursor: pointer;
+}
+
+.hamburger-button {
+	padding: 16px 24px 0 14px;
+}
+
+.hamburger-icon {
+	width: 22px;
+	height: 3px;
+	background: #fff;
+	margin-bottom: 5px;
+}
+
+.main-header {
+	background: #000;
+	padding: 5px 0px;
+	color: white;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.main-header a.hamburger-menu {
+	position: absolute;
+	right: 20px;
+	top: 17px;
+	color: white;
+	font-size: 32px;
+}
+
+.page-wrap {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	transition: all 0.3s ease;
+	background-color: #e6e6e6;				
+}			
+
+.main-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 100%;
+	background: #333;
+	overflow-y: auto;
+	transition: all 0.3s ease;
+	white-space: nowrap;
+	box-shadow: inset 40px 0 40px -40px black;
+}
+
+.main-nav a {
+	display: block;
+	border-bottom: 1px solid #4d4d4d;
+	color: #fff;
+	padding: 29px;
+	transition: .5s
+}
+
+.main-nav a:hover, .main-nav a:focus {
+	background: #404040;
+    transition: .5s
+}
+
+.close-menu {
+	display: none;
+}
+
+#main-nav:target {
+	/*  this one moves the menu item out, they were 0 width, when the hamburger menu is pressed they get 30% of the screen*/
+	width: 15%;
+}
+
+#main-nav:target + .page-wrap .close-menu {
+	display: block;
+}
+
+#main-nav:target + .page-wrap, 
+#main-nav:target + .page-wrap .main-header,
+#main-nav:target + .page-wrap .breadcrumbs {
+	width: -85%;
+	left: -15%;
+}
+
+#main-nav:target + .page-wrap .footer {
+	width: -85%;
+	left: 0;
+}
+
+@media (max-width: 992px) {
+	#main-nav:target {
+		/*  this one moves the menu item out, they were 0 width, when the hamburger menu is pressed they get 30% of the screen*/
+		width: 25%;
+	}
+	
+	#main-nav:target + .page-wrap, 
+	#main-nav:target + .page-wrap .main-header,
+	#main-nav:target + .page-wrap .breadcrumbs {
+		width: -75%;
+		left: -25%;
+	}
+	
+	#main-nav:target + .page-wrap .footer {
+		width: -75%;
+		left: 0;
+	}
+}
+
+nav.main-nav {
+	position: absolute;
+    right: 0;
+    z-index: 2000;
+}
+
+nav.main-nav ul {
+	list-style: none;
+	margin: 0;		
+	display: none;		
+}
+
+nav.main-nav ul li, label.menu-button {	
+	font-size: 16px;
+	font-weight: bold;
+}
+
+nav.main-nav ul li {
+	width: 190px;
+	height: 44px;
+	background-color: #000;
+	font-weight: normal;
+}
+
+nav.main-nav ul li a {
+	color: #fff;
+	display: block;
+	padding: 12px 15px;
+	margin-bottom: 0;
+	max-height: 44px;
+}
+
+nav.main-nav ul li a:hover {
+	opacity: .9;
+}
+
+/*** SIGN IN BAR ***/
+
+.main-header .right-links {
+	float: right; 
+	margin-top: 10px;
+	margin-right: 70px;
+}
+
+.sign-in-links, .help-link {
+	color: #fff;	
+	line-height: 2px;
+	margin-right: 25px;
+}
+
+.sign-in-links a, .help-link a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.light-gray {
+	color: #a0a0a0;
+}
+
+.sign-in-links .separator {
+	margin: 0 8px;
+}
+
+header.main-header {
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+header.main-header:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/* .help-link a {
+	color: #a0a0a0;
+} */
+
+.help-link .question-icon {
+	border: 1px solid #a0a0a0;
+	border-radius: 12px;
+	padding: 1px 8px;
+	position: relative;
+	left: -3px;    
+}
+
+.help-link .help-link-text {
+	margin-left: 2px;
+    position: relative;
+}
+
+.account-menu { 
+	font-size: 14px; 
+	background-color: #000;
+	display: none;
+	z-index: 1001;
+    top: 80px;
+    position: absolute;
+    right: 150px;    
+}
+
+.account-menu a {
+	display: block;
+	color: white; 
+	text-align: left; 
+	padding: 0;
+	margin-bottom: 0;
+	background: #333;
+	padding: 15px 30px; 
+	border-bottom: 1px solid #4d4d4d;
+	transition: .5s;
+}
+
+.account-menu a:last-child {	
+	 border-bottom: none;
+}
+
+.account-menu a:hover, .account-menu a:active {
+	background-color: #404040;
+	transition: .5s;
+}
+
+.breadcrumbs {
+	position: fixed;
+	left: 0;
+    top: 80px;
+    height: 60px;
+    background-color: #fff;
+    width: 100%;
+    padding-left: 23px;
+    font-size: 15px;
+    display: table;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+}
+
+.breadcrumbs .wrapper {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.breadcrumbs a {
+	margin: 8px;
+}
+
+.breadcrumbs .btn-group {
+	margin-left: 8px;
+}
+
+.breadcrumbs a:first-child,  .breadcrumbs a:first-child:hover {
+	color: #a0a0a0;	
+}
+
+.main-content {
+	padding: 40px;
+	padding-top: 140px;
+}
+
+/*** THEME COLORS ***/
+.home {
+	background-color: #b2220d;	
+}
+
+.admin {
+	background-color: #201b63;
+}
+
+.school {
+	/* background-color: #6a825e; */
+	background-color: #006b20;
+}
+
+.reference {	
+	/* background-color: #baa55e; */
+	background-color: #c4a02b;
+}
+
+.reading-room {
+	color: #fff;
+	background-color:  #23517f;
+}
+
+.lexicon {
+	/* background-color: #8a414c; */
+	background-color: #660e00;
+}
+
+.folio {
+	color: #fff;
+	background-color: #444;
+}
+
+.scriptorium {
+	background-color: #7b5e7c;
+}
+.oliver {
+	background-color: #6b7879;
+}
+
+.catalog-database {
+	background-color: #7b5e7c;
+}
+
+.catalog-database-icon {
+	color: #7b5e7c;
+	top: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.catalog-database-icon:hover, i.catalog-database-icon:hover {
+	color: #7b5e7c;
+}
+
+.home-hover:hover {
+	background-color: #b2220d;
+}
+
+.school-hover:hover {
+/* 	background-color: #6a825e; */
+	background-color: #006b20;
+}
+
+.reference-hover:hover {
+/* 	background-color: #baa55e; */
+	background-color: #c4a02b;
+}
+
+.reading-room-hover:hover {
+	background-color: #23517f;
+}
+
+.lexicon-hover:hover {
+	/* background-color: #8a414c; */
+	background-color: #660e00;
+}
+
+.folio-hover:hover {
+	background-color: #444;
+}
+
+.scriptorium-hover:hover {
+	background-color: #7b5e7c;
+}
+
+.catalog-database-hover:hover {
+	background-color: #7b5e7c; 
+}
+
+.oliver-hover:hover {
+	background-color: #6b7879;//#808000;
+}
+
+
+/*** THEME COLORS for links ***/
+.lexicon-link, .lexicon-link:hover {
+	/* color: #8a414c; */
+	color: #660e00;
+}
+
+.school-link, .school-link:hover {
+	color: #006b20;
+}
+
+.reference-link, .reference-link:hover {
+	color: #c4a02b;
+}
+
+.folio-link, .folio-link:hover  {
+	color: 	#444;
+}
+
+.reading-room-link, .reading-room-link:hover {
+	color: #23517f;
+}
+
+.oliver-link, .oliver-link:hover {
+	color: #6b7879;
+}
+
+.home-link, .home-link:hover {
+	color: #b2220d;
+}
+
+.catalog-database-link, .catalog-database-link:hover {
+	color: #7b5e7c;
+}
+
+.admin-link, .admin-link:hover {
+	color: #201b63;
+}
+
+.future-plans-link {
+	color: #333;
+    /* font-family: "Noto Sans",Arial,Helvetica,sans-serif; */
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+	font-style: italic;	
+}
+
+.whats-new-link {
+	color:#b2220d;
+    /* font-family: "Noto Sans",Arial,Helvetica,sans-serif; */
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+	font-style: italic;		
+}
+
+a.whats-new-link {
+	color:#b2220d;
+}
+.popover.error {
+	color: #f00;
+	max-width: none;
+}
+
+.popover.error .popover-content {
+	white-space: nowrap;
+	max-width: none;
+}
+
+/*** FORMS ***/
+form label {
+	font-size: 16px;
+	font-weight: normal;
+	width: 200px;
+	text-align: right;
+}
+
+/*** GENERAL STYLES ***/
+
+.buttonRow {
+	margin: 15px 0;
+}
+
+button, .btn {
+	box-shadow: none;
+	margin: 0 10px;	
+	border-radius: 2px;
+}
+
+.btn:last-child, .btn:last-child:hover {
+	margin-right: 0;
+}
+
+.btn:first-child, .btn:first-child:hover {
+	margin-left: 0;
+}
+
+button, button:hover, button a, button a:hover {
+	color: #ffffff;
+}
+
+button.close {
+	box-shadow: none;
+}
+
+.btn, .btn:hover, .btn:focus {
+	color: #ffffff;
+	box-shadow: none;
+	padding: 0.5em 1.2em 0.5em 1.2em;
+	text-decoration: none;
+	text-align: center;
+}
+
+.btn-default, .btn-default:hover, .btn-default.dropdown-toggle {
+	color: #333;
+}
+
+.btn-medium {
+	padding: .2em .8em;
+}
+
+.btn-default.dropdown-toggle {
+	margin-bottom: 0;
+}
+
+.btn-preferred {
+	font-weight: normal;
+}
+
+td.actions {
+	text-align: right;
+}
+
+td.actions a.btn {
+	margin: 0 0 0 10px;		
+}
+
+.button-large {
+	width: 440px;
+}
+
+.overline {
+	text-decoration: overline;
+}
+
+.school-underline {
+	/* border-bottom: 4px solid #6A825E; */	
+	border-bottom: 4px solid #006b20;	
+}
+
+.image-wrapper, .block-image-wrapper {
+	display: flex;
+}
+
+.block-image, .block-image-tall {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin: 20px 20px 0 0;
+}
+
+.info-icon-wrapper {
+	position: relative;
+}
+
+.info-icon {
+	position: absolute; 
+	bottom: -1px;
+	z-index: 500; 		
+}
+
+.image-wrapper .info-icon {
+	margin-left: 5px;	
+}
+
+/* block image is scaled up to 200 x 200 so we need to pull the info icon left */
+.block-image-wrapper .info-icon {
+	right: -1px;
+}
+
+.block-image-tall.registration {
+	float: left;
+	width: 220px;
+	margin: 20px 20px 0 0;
+}
+
+.block-image-tall {
+	height: auto;
+}
+
+.block-image + .glyphicon-info-sign {
+	position: relative;
+	top: 200px;
+	left: -15px;
+	cursor: pointer;
+	z-index: 1000;	
+}
+
+.aboutpage-block-image, .block-image-tall {
+	float: left;
+	width: 350px;
+	margin: 20px 20px 0 0;
+}
+
+.aboutpage-block-image + .glyphicon-info-sign {
+	position: relative;
+	top: 200px;
+	left: -15px;
+	cursor: pointer;
+	z-index: 1000;	
+}
+
+.block-image + .glyphicon-info-sign.white {
+	color: #eee;
+}
+
+.centered-image {
+	margin: auto;
+}
+
+.redtext {
+	color: #f00;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+.redtext-normal {
+	color: #f00;
+	font-style: normal;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.subheading {
+	text-transform: uppercase;
+	margin-top:1em;
+	
+}
+
+/** FOOTER **/
+.main-footer {
+	background-color: #000;
+	color: #fff;
+	text-align: left;	
+	clear: both;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	transition: all 0.3s ease;		 
+}
+
+.main-footer .row {
+	display: flex;
+	align-items: center;
+}
+
+.main-footer ul li {
+	font-size: 14px;
+	margin: 10px 0;
+}
+
+.main-footer a {
+	color:#fff;
+}
+
+.main-footer p a:hover {  /*underline text links in red if hover for text, but not for images */
+	border-bottom: 1px solid #c30;
+	text-decoration:none;
+}
+
+.footercontainer {
+	padding: 60px;
+	border-bottom: 1px solid #595959;
+}
+
+.footercontainer:last-child {
+	border-bottom: none;
+}
+
+.footer-bottom-links a {
+	color: #595959;	
+	margin-right: 40px;
+}
+
+.main-footer ul {
+	list-style: none;
+}
+
+.funded-by-text {
+	position: relative;
+    left: -64px
+}
+
+.help-footer {	
+    text-align: center;
+	padding: 40px;
+}
+
+.nobreakFooter { white-space: nowrap; }
+
+.transparent-button {
+	border: 3px solid #fff;
+	text-align: center;
+	align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    background: transparent;
+    margin: 0;
+    margin-top: 30px;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+.pager {
+	margin: 10px 0;
+}
+
+.paging-controls {
+	text-align: center;
+	margin-bottom: 15px;
+	clear: both;
+	display: none;	
+}
+
+.paging-controls a {
+	cursor: pointer;
+}
+
+.paging-controls .paging-info {
+	margin-top: 8px;
+	display: inline-block;
+}
+
+.wide-dialog {
+	width: 80%;
+}
+
+.dialog-link {
+	word-break: break-all;
+	ms-word-break: break-all;
+}
+
+.dialog-footer {
+	width: 100%;
+	text-align: center;
+}
+
+.dialog-footer label {
+	margin-left: 10px;
+	position: relative;
+	top: -2px;	
+}
+
+a.dialog-footer {
+	cursor: pointer;
+}
+
+.modal-title label {
+	margin-top: 10px;
+}
+
+.formWrapper {
+	max-width: 1024px;
+	margin: auto;	
+}
+
+.formWrapper form {
+	padding: 50px 45px 10px 20px;	
+}
+
+.vhmmlForm {
+	background: #767676;  	
+  	color: #fff;
+  	box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+  	border-radius: 2px;
+}
+
+.form-control {
+	border-radius: 2px;
+}
+
+.dialogForm label {
+	margin-right: 5px;
+}
+
+.captchaCheckboxWrapper {
+	border: 1px solid #fff;
+	border-radius: 5px;	
+	float: left;
+	padding: 20px;
+	width: 100%;
+}
+
+.captchaCheckboxes label {
+    display: block;
+    float: left;
+    padding-right: 10px;
+    white-space: nowrap;
+    clear: both;
+    text-align: right;
+    width: 100%;
+}
+
+.captchaCheckboxes input {
+    vertical-align: middle;
+}
+
+.captchaCheckboxes label span {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#loginForm, #forgotPasswordForm {
+	margin: 100px auto;
+	width: 400px;
+	padding: 40px;	
+}
+
+#forgotPasswordForm {
+	width: 350px;
+	height: 160px;
+	padding: 50px 30px 50px 0;
+}
+
+#registrationWrapper {
+	width: 740px;
+	Margin: 0 10px 0 100px;
+}
+
+#registrationWrapper .topLink {
+	margin: 10px 0;
+}
+
+#registrationForm {
+	margin-bottom: 100px;
+	padding: 50px 45px 10px 20px;
+}
+
+#changePasswordForm, .changePasswordDescription {
+	width: 700px;	
+	margin: auto;
+}
+
+#changePasswordForm {
+	padding: 50px 50px 30px 0px;
+	margin: 30px auto;
+}
+
+.searchForm .btn-group, .searchButton, .clearSearchButton {	
+	position: relative;
+	top: -2px;
+}
+
+.searchForm label {
+	margin-right: 5px;
+}
+
+.searchForm .btn-group button {
+	width: 95px;
+}
+
+.searchButton, .searchButton:hover {
+	margin: 10px;
+}
+.clearSearchButton, .clearSearchButton:hover {
+	margin: 10px;
+	color: #333;
+}
+	
+.searchLetters {
+	clear: right;	
+	/*border: 1px solid #aaa;
+	border-radius: 5px;	*/
+}
+	
+.searchLetter {
+	padding: 5px 16px;
+	cursor: pointer;
+}
+	
+.searchLetter.selected {
+	font-weight: bold;
+}
+
+.searchLetter.selected, .searchLetter:hover {
+	background-color: #999;
+	/* color: #8a414c; */
+	color: #660e00;
+	border-radius: 5px;	
+}
+	
+.searchLetterRow {
+	margin: 20px 0;
+	white-space: nowrap;
+}
+
+.rowPad {
+	margin-bottom: 10px;
+}
+
+.actionButtons {
+	padding: 10px 0;
+}
+
+.actionButtons button:first-child, .actionButtons .btn:first-child, .actionButtons .btn-group:first-child {
+	margin-right: 0;
+}
+
+.success {
+	color: #5cb85c;
+}
+
+/* add red class for making things red because jquery validation has logic that uses the error class */
+.error, .red {
+	color: #c9302c;
+}
+
+.spinner {
+	text-align: center;
+	display: none;
+}
+
+label.spinnerMessage {
+	/* font-family: "Noto Sans", Arial, Helvetica, sans-serif; */
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin-left: 5px; 
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+#pageErrors span.glyphicon {
+	float: left;
+}
+
+#pageErrors ul.errorList {
+	list-style: none;
+}
+
+.messages .glyphicon {
+	margin-right: 5px;
+}
+
+#noResultsMessage, #invalidSearchMessage {
+	display: none;
+	clear: both;
+}
+
+#noResultsMessage .glyphicon, #invalidSearchMessage .glyphicon {
+	margin-right: 10px;
+	top: 2px;
+}
+
+.glyphicon-download {
+	cursor: pointer;
+}
+
+#vhmml-dialog, #answer-dialog {
+	z-index: 2000;
+}
+
+.modal-content {
+	max-height: 600px;
+	overflow-y: auto;
+	border-radius: 2px;
+}
+
+.ui-draggable-handle {
+	cursor: move;
+}
+
+.menuForAboutPage {
+	vertical-align: bottom;
+}
+
+ul.unorderedListNoBullets li{
+    list-style-type: none;
+    padding-bottom:1em;
+}
+
+.hangingIndent  {
+	text-align:left;
+	margin-left: 3em;
+	text-indent: -3em;
+	
+}
+
+.flipHorizontal {
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+.rotateTextClockwise {
+	-webkit-transform: rotate(90deg);/* Safari */
+	-moz-transform: rotate(90deg);/* Firefox */
+	-ms-transform: rotate(90deg);/* IE */
+	-o-transform: rotate(90deg);	/* Opera */
+	transform: rotate(90deg);	/*Default*/	
+}
+
+.viafLink, a.viafLink, a.viafLink:hover, a.viafLink:active, a.viafLink:visited  {
+	background-color: #0e76bc;
+	color: #fff;
+	height: 20px;
+	font-weight: bold;
+	text-align: center;
+	font-size: 12px;
+    padding: 0px 3px 1px 3px;
+    text-decoration: none; /* after clicking, don't have underline */
+}
+ 
+#vhmmlMessages {
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    width: 100%;
+    border-radius: 0;
+} 
+
+/* Bootstrap overrides & fixes */
+
+#vhmmlMessages .alert {
+	border-radius: 0;	
+}
+
+.btn-danger {
+	background-color: #c9302c;/* use the active color for danger buttons, the regular color looks disabled */
+  	border-color: #ac292
+}
+
+/* fix for Twitter Bootstrap modal removing scrollbar and shifting the screen when a modal is opened */
+
+/* do this only for desktop, the code was added to Bootstrap so you could scroll the screen and 
+ see a dialog if it's below bottom of the screen on mobile devices */
+@media (min-width: 992px) {	
+	/* removes inline padding added by Boostrap that makes the screen shift left */
+	.modal-open[style] {
+		padding-right: 0px !important;
+	}
+	
+	/* keeps Bootstrap from removing the scrollbar if it's there */
+	.modal-open {
+		overflow: auto;
+	}	
+}
+
+.center-block + .glyphicon-info-sign {
+	position: relative;
+	float: left;
+	top: -30px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.Arabic, .Armenian, .Syriac, .Garshuni {
+	font-size: 16px;
+	position: relative;
+	top: -5px;
+}
+
+@media (max-width: 768px) {	
+	.block-image, .block-image + .glyphicon-info-sign {
+		display: none;
+	}
+	
+	.home-page-image {
+		max-width: 600px;
+	}
+	
+	#referenceEntryTable td {
+    	padding: 3px;
+    	font-size: 14px;
+	}
+}
+
+/* custom icon font */
+.large-icon {
+	font-size: 80px;
+}
+
+.wrap-overflow {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+}
+	
+.icon-wrapper {
+	width: 200px; 
+	margin: auto;
+}
+
+.image-placeholder {
+	width: 200px;
+	height: 200px;
+	display: table-cell;
+	vertical-align: middle;	
+}
+
+.rr-thumbnail {
+	margin: 0 30px 10px 0;
+	width: 200px;
+	height: 100%;
+	/* below css is helpful if we want to make all thumbs the same size and crop excess using overflow: hidden */
+	/* width: 200px;
+	height: 200px; */
+	/* overflow: hidden; */
+	/* background-color: #000; */		
+}
+
+.rr-thumbnail img {
+	width: 200px;
+}
+
+.card-icon {
+	font-size: 62px;
+}
+
+.light-blue-bg {
+	background-color: #eaf1f7;
+}
+
+.light-green-bg {
+	background-color: #eaf7f0;
+}
+
+.blue-icon {
+	color: #6a97c3;
+}
+
+.green-icon {
+	color: #72bc94;
+}

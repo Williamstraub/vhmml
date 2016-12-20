@@ -1,0 +1,1 @@
+ALTER TABLE reading_room_content CHANGE COLUMN item_location item_location VARCHAR(500);

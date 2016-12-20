@@ -1,0 +1,1 @@
+insert into application_configuration (prop_key, prop_value, input_type) values ('max.thumbnail.height', '700', 'text');

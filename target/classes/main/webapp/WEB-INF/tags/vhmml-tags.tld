@@ -1,0 +1,74 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+  
+    <tlibversion>1.2</tlibversion>
+    <shortname>vhmml</shortname>
+    <uri>/WEB-INF/tags/</uri>
+    
+    <tag-file>
+		<name>paging-controls</name>
+		<path>/WEB-INF/tags/paging-controls.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>zotero-items-tree</name>
+		<path>/WEB-INF/tags/zotero-items-tree.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>lesson-index-item</name>
+		<path>/WEB-INF/tags/lesson-index-item.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>corrections-form</name>
+		<path>/WEB-INF/tags/corrections-form.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>field-group</name>
+		<path>/WEB-INF/tags/field-group.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>input</name>
+		<path>/WEB-INF/tags/input.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>select</name>
+		<path>/WEB-INF/tags/select.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>checkbox</name>
+		<path>/WEB-INF/tags/checkbox.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>input-select-combo</name>
+		<path>/WEB-INF/tags/input-select-combo.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>dimension-input</name>
+		<path>/WEB-INF/tags/dimension-input.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>repeatable-field-buttons</name>
+		<path>/WEB-INF/tags/repeatable-field-buttons.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>date</name>
+		<path>/WEB-INF/tags/date.tag</path>
+	</tag-file>
+	
+	<tag-file>
+		<name>label</name>
+		<path>/WEB-INF/tags/label.tag</path>
+	</tag-file>
+	
+</taglib>

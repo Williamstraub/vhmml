@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="		
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">    
+    
+    <context:property-placeholder location="classpath:${spring.profiles.active:local}-config.properties" />
+	<jpa:repositories base-package="org.vhmml.repository" />
+	
+	<tx:annotation-driven/>
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">		
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" depends-on="flyway">
+	    <property name="dataSource" ref="dataSource" />
+	    <!-- where to scan for @Entity classes -->
+		<property name="packagesToScan" value="org.vhmml.entity" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>	
+	
+	<bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	
+	<!-- Flyway configuration -->
+	<bean id="flyway" class="org.flywaydb.core.Flyway" init-method="migrate">
+		<property name="validateOnMigrate" value="false" />
+		<property name="baselineOnMigrate" value="true" />
+		<property name="locations" value="classpath:/db/migration/" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	    
+<!-- 	    <property name="jpaProperties">
+	        <props>
+	            <prop key="hibernate.hbm2ddl.auto">validate</prop>
+	            <prop key="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</prop>
+	
+	            <prop key="hibernate.connection.driver_class">org.postgresql.Driver</prop>
+	            <prop key="hibernate.connection.url">jdbc:postgresql://localhost:5432/myDB</prop>
+	            <prop key="hibernate.connection.username">username</prop>
+	            <prop key="hibernate.connection.password">password</prop>
+	
+	            <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+	            <prop key="hibernate.id.new_generator_mappings">true</prop>
+	            <prop key="hibernate.show_sql">false</prop>
+	            <prop key="hibernate.jdbc.batch_size">50</prop>
+	            <prop key="hibernate.id.new_generator_mappings">true</prop>
+	            <prop key="hibernate.c3p0.maxSize">100</prop>
+	            <prop key="hibernate.c3p0.minSize">10</prop>
+	            <prop key="hibernate.c3p0.acquireIncrement">10</prop>
+	            <prop key="hibernate.c3p0.idleTestPeriod">300</prop>
+	            <prop key="hibernate.c3p0.maxStatements">0</prop>
+	            <prop key="hibernate.c3p0.timeout">1800</prop>
+	            <prop key="hibernate.c3p0.checkoutTimeout">0</prop>
+	            <prop key="hibernate.c3p0.preferredTestQuery">SELECT 1;</prop>
+	        </props>
+	    </property> -->	    
+    
+</beans>

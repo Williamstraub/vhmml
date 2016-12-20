@@ -1,0 +1,1 @@
+alter table reading_room_objects add column right_to_left boolean default 0;

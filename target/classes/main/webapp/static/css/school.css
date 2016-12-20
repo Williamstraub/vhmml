@@ -1,0 +1,148 @@
+.lessonIndex {		
+	padding: 12px 8px 12px 8px;		
+	border-radius: 8px;
+	box-shadow: 4px 4px 5px rgba(0,0,0,.5);		
+	font-size: smaller;
+	color: #ffffff;
+	margin-top: 20px;
+}
+
+#lessonIndex button {
+	width: 260px;	
+	text-align: left;
+}
+
+#lessonIndex button .caret {
+	position: absolute;
+	left: 90%;
+	top: 45%
+}
+
+.lessonIndex ul {
+	list-style-type: none;
+}
+
+.lessonIndex ul a {
+	text-decoration: none;
+	color:#ffffff;
+}	
+
+.lessonIndex ul li.selected {
+	list-style-type: square;
+ 	color: #333;
+}
+
+.lessonIndexWrapper {
+	width: 300px; 
+	height: 118px;
+	margin-top: 20px; 
+	padding: 20px;
+	color: #fff; 
+	border-radius: 2px; 
+	box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+}
+
+.lessonIndexWrapper label {
+	display: block;	
+}
+
+a.allLessons {
+	color: #fff;
+	top: 8px;
+	position: relative;	
+}
+
+.navButton, .navButton:hover {
+	display: inline;
+}
+
+.showAnswer, .showAnswer:hover {
+	margin: 10px 0;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.exerciseAnswer {
+	display: none;
+}
+
+#answerDialog .modal-title {
+	font-size: 140%;
+	font-weight: bold;
+}
+
+.modal-header {
+	cursor: move;
+}
+
+.lessons hr {
+	margin: 10px 0 15px 0;
+}
+
+.lessonDescription {
+	margin-top: 10px;
+}
+
+ol.orderedlistalpha li{
+	list-style-type: lower-alpha;
+}
+
+p.imageTitle {
+	font-weight: bold;
+}
+h2.lessonSubheading {
+	line-height:130%;
+}
+h4.lessonSubheading {
+	/*text-decoration:underline;*/
+	text-transform: uppercase;
+	margin-top:1em;
+}
+h4.lessonHeading {
+	text-decoration:none;
+} 
+
+/* Scholar wants text to be lower on baseline, but the same size as the rest of the fonts == normal subscripted Unicode wont work for this*/
+.subscripted {
+	vertical-align: -30%;/*-5%; middle;*/
+	
+}
+
+/*Require whitespace below school lesson images*/
+.lesson-image {
+	margin-bottom:2em;
+		
+}
+/*Fix tables of descriptions of letters for Syriac lessons*/
+table.syriacLetterforms {
+	 min-width: 500px;
+	 width: 800px;/*930px;*/
+	max-width: 800px;/*930px;*/ 
+	border: 1.6px solid #888888;			
+}
+/*Create hanging indent for description of letters for Syriac lessons to improve readability*/
+li.letterDescription {	
+	text-indent:-2em;
+	list-style-type:none; 
+	padding-bottom:0.5em;
+}	
+
+/*Hanging indent for table for transcription conventions Basics lesson*/
+td.conventions {
+	padding-left:5em;
+	text-indent:-2em; 
+	padding-bottom:1.5em;	
+}
+tr.conventions{
+	vertical-align: top;
+	/* border: 1px solid #888888;*/
+}
+
+/*Format table for Christian late antiquity exercise two*/
+th.schoolLessonExerciseTable {
+	padding:1em 2em 0 2em;
+	
+}
+td.schoolLessonExerciseTable {
+	padding:2em;
+}

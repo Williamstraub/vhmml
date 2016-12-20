@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+    
+    <!-- 
+    	Don't pass requests for static resources through the security filter chain at all.
+    	This is different than IS_AUTHENTICATED_ANONYMOUSLY in that the security context will still be available to
+    	requests identified as IS_AUTHENTICATED_ANONYMOUSLY 
+    -->
+    <security:http pattern="/static/**" security="none"/>
+    
+	<security:http use-expressions="true">
+		<!-- have to set session-fixation-protection to none to keep default session management filter from being instantiated -->
+		<security:session-management session-fixation-protection="none"/>
+		<security:custom-filter position="SESSION_MANAGEMENT_FILTER" ref="vhmmlSessionManagementFilter"/>
+					
+	    <security:intercept-url pattern="/" access="permitAll"/>
+	    <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+	    <security:intercept-url pattern="/registration/**" access="permitAll" />
+	    <!-- 
+	    	allow change password for anyone because new users with a temporary password are immediately logged out 
+	    	and forced to change their password - in this scenario a new session is created for the user and their 
+	    	username is stored on that session so the password can only be changed by someone who successfully authenticated 
+	    -->
+	    <security:intercept-url pattern="/user/changePassword/**" access="permitAll" />	  	         
+	    <security:intercept-url pattern="/user/forgotPassword/**" access="permitAll" />      
+	    <security:intercept-url pattern="/user/validateSession/**" access="permitAll" />      
+	    <security:intercept-url pattern="/user/endSession/**" access="permitAll" />      
+	    <security:intercept-url pattern="/user/acceptReadingRoomAgreement/**" access="permitAll" />      
+	    <security:intercept-url pattern="/user/messages/**" access="permitAll" />      
+	    <security:intercept-url pattern="/feedback/**" access="permitAll" />	  	         
+	    <security:intercept-url pattern="/user/**" access="isAuthenticated()" />	           
+	    <security:intercept-url pattern="/lexicon/admin/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_LEXICON_CREATOR')" />
+	    <security:intercept-url pattern="/reference/admin/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_REFERENCE_CREATOR')" />
+	    <security:intercept-url pattern="/authList/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_LEVEL_I_CATALOGER')" />	    
+	    <security:intercept-url pattern="/catalogDatabase/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_LEVEL_I_CATALOGER', 'ROLE_LEVEL_II_CATALOGER', 'ROLE_LEVEL_III_CATALOGER')" />	    
+	    <security:intercept-url pattern="/folio/admin/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_FOLIO_CREATOR')" />	    
+		<security:intercept-url pattern="/reference/**" access="permitAll" />
+		<security:intercept-url pattern="/lexicon/**" access="permitAll" />
+		<security:intercept-url pattern="/readingRoom/**" access="permitAll" />
+		<security:intercept-url pattern="/image/**" access="permitAll" />
+		<security:intercept-url pattern="/folio/**" access="permitAll" />
+		<security:form-login login-page="/login" authentication-success-handler-ref="vhmmlAuthSuccessHandler" authentication-failure-url="/login?error=1"/>		
+		<security:logout logout-url="/logout" logout-success-url="/" delete-cookies="JSESSIONID" invalidate-session="true" />
+	</security:http>
+
+	<bean name="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+ 	
+ 	<bean id="httpSessionSecurityContextRepository" class="org.springframework.security.web.context.HttpSessionSecurityContextRepository"/>
+ 	
+ 	<bean id="vhmmlSessionManagementFilter"  class="org.vhmml.security.VhmmlSessionManagementFilter">
+		<constructor-arg name="securityContextRepository" ref="httpSessionSecurityContextRepository" />
+  		<property name="invalidSessionStrategy">
+			<bean class="org.springframework.security.web.session.SimpleRedirectInvalidSessionStrategy">
+				<constructor-arg name="invalidSessionUrl" value="/session-timeout" />
+    		</bean>
+  		</property>
+	</bean>	
+ 	
+	<bean id="vhmmlUserDetailsService" class="org.vhmml.security.VhmmlUserDetailsService"/>
+	<bean id="vhmmlAuthSuccessHandler" class="org.vhmml.security.VhmmlAuthSuccessHandler"/>
+	
+	<bean id="vhmmlAuthProvider" class="org.vhmml.security.VhmmlAuthenticationProvider">
+	    <property name="passwordEncoder" ref="bcryptEncoder"/>
+	    <property name="userDetailsService" ref="vhmmlUserDetailsService"/>	    
+	</bean>
+		
+	<security:authentication-manager>
+		<security:authentication-provider ref="vhmmlAuthProvider"/>
+	</security:authentication-manager>
+	
+</beans>

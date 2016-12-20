@@ -1,0 +1,1 @@
+insert into application_configuration values('vhmml.email.signature', '\n\nSincerely,\nThe staff at the\nHill Museum & Manuscript Library\n2835 Abbey Plaza - PO Box 7300\nSaint John''s University\nCollegeville, MN 56321-7300 USA\nEmail: hmml@hmml.org\nPhone: 320-363-3514\nFax: 320-363-3222\nhttp://www.hmml.org\n');

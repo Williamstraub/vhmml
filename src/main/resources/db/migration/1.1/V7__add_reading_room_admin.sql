@@ -1,0 +1,1 @@
+INSERT INTO roles values(null, "ROLE_READING_ROOM_ADMIN", "Reading Room Admin");

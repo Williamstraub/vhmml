@@ -1,0 +1,17 @@
+#related-terms ul, #other-languages ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.tab-content ul li {
+	margin-top: 10px;
+}	
+
+/* other langs are saved with CK Editor so they will have <p> around them */
+ul.otherLanguages li p {
+	display: inline;
+}
+
+.lexicon-tabs .tab-content {
+	margin-top: 10px;
+}

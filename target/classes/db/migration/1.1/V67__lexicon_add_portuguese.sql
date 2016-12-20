@@ -1,0 +1,1 @@
+alter table lexicon_terms add column portuguese_terms varchar(255);

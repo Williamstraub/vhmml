@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+		
+	<context:component-scan base-package="org.vhmml.controller" />
+	
+	<context:property-placeholder  location="classpath:${spring.profiles.active:local}-config.properties" />
+	
+	<mvc:annotation-driven validator="validator" >
+		<mvc:argument-resolvers>
+			<ref bean="sortResolver"/>
+			<ref bean="pageableResolver" />
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+	    	<bean class="org.vhmml.controller.AdminMenuInterceptor" />
+    	</mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean id="sortResolver" class="org.springframework.data.web.SortHandlerMethodArgumentResolver" />
+	
+	<bean id="pageableResolver" class="org.springframework.data.web.PageableHandlerMethodArgumentResolver">
+		<constructor-arg ref="sortResolver" />
+	</bean>
+	
+	<!-- SimpleUrlHandlerMapping allows us to map URLs to the ParameterizableViewController definitions below -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/">homeController</prop>
+                <prop key="/home">homeController</prop>                
+                <prop key="/help">helpController</prop>                
+                <prop key="/about">aboutController</prop>                             
+                <prop key="/contact">contactController</prop>                
+                <prop key="/privacy">privacyPolicyController</prop>                
+                <prop key="/terms">termsController</prop>                                          
+                <prop key="/session-timeout">sessionTimeoutController</prop>                
+                <prop key="/login">loginController</prop>
+                <prop key="/login/help">loginHelpController</prop>                
+                <prop key="/catalogDatabase/guidelines">catalogerGuidelinesController</prop>
+                <prop key="/catalogDatabase/dictionaries">catalogerDictionariesController</prop>
+                <prop key="/catalogDatabase/contact">catalogerContactController</prop>               
+            </props>
+        </property>
+    </bean>
+    
+	<!-- ParameterizableViewController allows us to map simple pages to Tiles views without writing a controller class -->    
+	<bean id="homeController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/home" />
+	</bean>	
+	
+	<bean id="helpController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/help" />
+	</bean>	
+	
+	<bean id="aboutController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/about" />
+	</bean>
+	
+	<bean id="contactController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/contact" />
+	</bean>
+	
+	<bean id="privacyPolicyController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/privacy-policy" />
+	</bean>
+	
+	<bean id="termsController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/terms-of-use" />
+	</bean>
+	
+	<bean id="loginController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="login/login" />
+	</bean>
+	
+	<bean id="sessionTimeoutController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="static/session-timeout" />
+    	<property name="supportedMethods" value="GET,HEAD,POST,DELETE,PUT" />
+	</bean>
+	
+	<bean id="loginHelpController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="login/help" />
+	</bean>
+	
+	<bean id="catalogerGuidelinesController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="catalogDatabase/guidelines" />
+	</bean>
+	
+	<bean id="catalogerDictionariesController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="catalogDatabase/dictionaries" />
+	</bean>
+	
+	<bean id="catalogerContactController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    	<property name="viewName" value="catalogDatabase/contact" />
+	</bean>
+
+	<!-- This wires up the AOP based trace logging that will log controller method entry & exit. To turn it on, 
+		set the log level to trace on the org.springframework.aop.interceptor.CustomizableTraceInterceptor 
+		logger in the log4j.xml configuration file. -->		
+	<bean id="loggingInterceptor" class="org.springframework.aop.interceptor.CustomizableTraceInterceptor">
+		<property name="enterMessage" value="Entering $[targetClassShortName].$[methodName]($[arguments])" />
+		<property name="exitMessage" value="Leaving $[targetClassShortName].$[methodName](): $[returnValue]" />
+	</bean>
+	
+	<bean id="adminMenuInterceptor" class="org.vhmml.controller.AdminMenuInterceptor" />
+	
+	<aop:config proxy-target-class="true">
+		<aop:advisor advice-ref="loggingInterceptor" pointcut="execution(* org.vhmml.controller.*.*(..))" />
+	</aop:config>	
+
+	<bean id="simpleMappingExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<!-- The following are examples of how to register pages for specific business exceptions 
+		<property name="exceptionMappings">
+			<map>
+				<entry key="DatabaseException" value="databaseError" />
+				<entry key="InvalidCreditCardException" value="creditCardError" />
+			</map>
+		</property>
+		-->
+		
+		<property name="defaultErrorView" value="error/unexpectedError" />
+
+		<!-- Name of logger to use to log exceptions -->
+		<property name="warnLogCategory" value="org.vhmml" /> 
+	</bean>
+	
+	<!-- Define a bean to handle conversion of json requests to method parameters -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes" value="application/json" />
+		
+		<property name="objectMapper">
+			<bean class="org.vhmml.web.VhmmlObjectMapper"/>
+		</property>
+	</bean>	
+	
+	<!-- resources in the static, readingRoom directories don't get routed to the dispatcher servlet -->
+	<!-- 
+		the readingRoom directory contains images for mirador, mirador currently requires that these folders be placed 
+		relative to the URL of the page containing the mirador viewer, otherwise we would have them under static
+	-->
+	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/readingRoom/**" location="/readingRoom/" />
+	
+	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/jsp directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>	
+	
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles-defs.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+	    <property name="order" value="2"/>
+	</bean>
+
+	<!-- Configure a validator that will be called for method parameters annotated with @Valid -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+	
+	<bean id="annotationMethodHandlerAdapter" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	    <property name="webBindingInitializer">
+	        <bean id="configurableWebBindingInitializer" class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+	            <property name="validator">
+	                <ref bean="validator"/>
+	            </property>
+	        </bean>
+	    </property>
+	</bean>
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	
+</beans>

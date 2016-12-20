@@ -1,0 +1,20 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+  
+    <tlibversion>1.2</tlibversion>
+    <shortname>vhmml-fn</shortname>
+    <uri>VhmmlFunctions</uri>
+    <function>
+    	<name>getFieldName</name>
+    	<function-class>org.vhmml.web.el.function.VhmmlElFunctions</function-class>
+    	<function-signature>String getCompleteFieldName(java.lang.String, java.lang.String, java.lang.Integer)</function-signature>
+    </function>
+    
+    <function>
+    	<name>getFieldCount</name>
+    	<function-class>org.vhmml.web.el.function.VhmmlElFunctions</function-class>
+    	<function-signature>String getFieldCount(java.util.List)</function-signature>
+    </function>
+	
+</taglib>

@@ -1,0 +1,1 @@
+insert into application_configuration (prop_key, prop_value, input_type) values('permalink.url', 'w3id.org/vhmml', 'text');

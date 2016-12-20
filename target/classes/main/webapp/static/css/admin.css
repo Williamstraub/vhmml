@@ -1,0 +1,44 @@
+div.tagsinput span.tag {
+	background: #8a414c;
+	color: #ccc;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+div.tagsinput span.tag a {
+	color: #ccc;
+}
+
+#appConfigForm td {
+	padding: 10px
+}
+
+#appConfigForm input[type="text"] {
+	width: 550px;
+}
+
+ul.reports {
+	list-style: none;
+}
+
+.reportControls {
+	margin-top: 20px;
+}
+
+.reportControls label {
+	margin: 0 5px;
+}
+
+.reportControls .reportParam {
+	display: none;
+}
+
+.reportControls .datepicker {
+	background-color: #fff;
+}
+
+.reportControls form label {
+	width: auto;
+}

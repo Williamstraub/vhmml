@@ -1,0 +1,1 @@
+alter table reading_room_content change column notes_to_text item_notes text;

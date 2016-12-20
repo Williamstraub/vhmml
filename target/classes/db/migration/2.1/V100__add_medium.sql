@@ -1,0 +1,1 @@
+alter table reading_room_object_parts add column medium varchar(255);

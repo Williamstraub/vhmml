@@ -1,0 +1,73 @@
+div.ui-groupbox-list-wrapper {
+	float: left;
+}
+
+div.ui-groupbox-clear {
+	clear: both;
+}
+
+div.ui-groupbox-scroll {
+	overflow-y: scroll;
+	border: 1px solid gray;				
+}
+
+ul.ui-groupbox-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.ui-groupbox-list li {
+	cursor: pointer;		
+	height: auto;	
+}
+			
+div.ui-groupbox-buttons {
+	float: left;
+	position: relative;
+	margin: 0 10px;				
+}
+
+div.ui-groupbox-buttons button {
+	margin-bottom: 7px;
+}
+
+.ui-button-xsmall {
+	padding: 0 !important;
+}
+
+.ui-button-small {
+	padding: .1em .5em !important;
+}
+
+.ui-button-medium {
+	padding: .4em 1em !important;
+}
+
+.ui-button-large {
+	padding: .8em 1.5em !important;	
+}
+
+.ui-button-xlarge {
+	padding: 1.2em 2em !important;
+}
+
+.ui-item-xsmall {
+	padding: 0 !important;
+}
+
+.ui-item-small {
+	padding: 4px 2px 2px 2px;
+}
+
+.ui-item-medium {
+	padding: 8px 4px 4px 4px;
+}
+
+.ui-item-large {
+	padding: 12px 8px 8px 8px;
+}
+
+.ui-item-xlarge {
+	padding: 16px 12px 12px 12px;
+}

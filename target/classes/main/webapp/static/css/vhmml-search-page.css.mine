@@ -1,0 +1,829 @@
+body {
+	/* have to override the extremely presumptive settings that mirador's css puts on the entire body element */
+	font-size: 16px;
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+li.previous.disabled, li.next.disabled {
+	/* mirador sets this to none for all .disabled elements, which breaks our disabled previous & next button hover cursors */
+	pointer-events: auto;	
+}
+
+em.highlight {
+	font-weight: bold;
+}
+
+h2.readingRoom {
+	font-weight: normal;
+}
+
+h3 {
+	text-decoration: underline;
+}
+
+h3.landingPage {
+	color: #617779;
+	font-size: large;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+hr.reading-room:first-child {
+	margin-top: 10px;		
+}
+
+.container {
+	padding: 0;
+	overflow: visible !important;
+}
+
+.main-content {
+	padding: 140px 0 40px 0;
+}
+
+.content {
+	max-width: 875px;
+	margin: 0 20px;
+}
+
+.page-banner {
+	min-height: 275px;	
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0px 2px 1px rgba(0,0,0,.1);	
+}
+
+.page-banner .wrapper {
+	position: relative;
+	z-index: 2;
+}
+
+.page-banner .large-icon {
+	float: left;
+	margin-right: 15px;
+}
+
+.page-banner a {
+	text-decoration: underline;
+}
+
+/* background icon font image */
+.page-banner:after {
+    font-size: 500px;
+    font-family: 'vhmml';
+    position: absolute;
+    top: -150px;
+    right: 2%;
+    color: #2c5e90;
+    z-index: 1;	    
+}
+
+.page-banner.book-bg:after {
+	content: "c";
+}
+
+.card, .image-card {
+	margin-top: 40px;
+	box-shadow: 0px 2px 1px rgba(0,0,0,.1);	
+}
+
+.image-card {
+	display: flex;
+	align-items: center;
+	background: #000;
+	text-align: center;
+	height: 662px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-card .carousel-caption {
+	background-color: rgba(0,0,0,0.75);
+    width: 100%;
+    bottom: 0;    
+    left: 0;
+}
+
+.carousel-image {
+	display: none;
+}
+
+.image-card .carousel-caption button {
+	border: 3px solid #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background: transparent;
+    margin: 0;
+    font-size: 15px;
+}
+
+.card {		
+	background: #fff;
+	padding: 20px 40px;
+}
+
+.card p {
+	padding-top: 0;
+}
+
+.reading-room-card {
+	border-top: 2px solid #23517f;	
+}
+
+.folio-card {
+	border-top: 2px solid #444;	
+}
+
+.card-full {
+	width: auto;
+}
+
+.card .section-title + hr {
+	border-bottom: 1px solid #ededed;
+}
+
+.card label {
+	font-size: 15px;
+}
+
+.card p {
+	line-height: 25px;
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.mirador-viewer.container {
+	overflow: hidden;
+}
+
+.bodyContent {
+	transition: transform .3s ease;
+ 	display: flex;
+}
+
+.bootstrap-select .dropdown-menu li {
+	font-size: 12px;
+}
+
+.searchControl {
+	width: 350px;
+}
+
+.searchControl .caret {
+	margin-left: 7px;
+}
+
+.searchControl label {
+	text-align: left;
+	font-size: 12px;
+    font-weight: bold;
+}
+
+.searchControl label.wide {
+	width: 100%;
+}
+
+.search label.small {
+	font-size: 14px;
+}	
+
+.searchControl input[type="text"], .searchControl select, .searchControl textarea {
+	width: 307px;
+	padding: 2px;
+}
+
+.searchWrapper {
+	border: 1px solid #c0c0c0;
+	background-color: #fff;
+}
+	
+.slideOutMenu .panel-heading {
+	background-color: #f9f9f9;
+   	padding: 15px 25px 15px 20px;
+   	border-color: #ddd;
+}
+
+.slideOutMenu {
+	-webkit-transition: -webkit-transform .3s ease, -webkit-width .3s ease;
+	-moz-transition: -moz-transform .3s ease, -moz-width .3s ease;
+	-ms-transition: -ms-transform .3s ease, -ms-width .3s ease;
+	-o-transition: -o-transform .3s ease, -o-width .3s ease;
+	transition: transform .3s ease, width .3s ease;
+}
+
+.layout-slot, .slot {
+	-webkit-transition: -webkit-width .3s ease;
+	-moz-transition: -moz-width .3s ease;
+	-ms-transition: -ms-width .3s ease;
+	-o-transition: -o-width .3s ease;
+	transition: width .3s ease;
+}
+
+.searchToggleBar {
+	display: none;		
+	width: 20px;
+	height: 1024px;
+	left: 350px;
+	cursor: pointer;
+	background-color: #bbb;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+}
+
+.menuToggleIcon {
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    top: -5px;
+}
+
+.menuToggleIcon.left {
+	right: -10px;
+	top: 12px;
+}
+
+.menuToggleIcon.right {
+	left: 5px;
+}
+
+.menuCloseIcon {	
+	position: relative; 
+	top: 1px;
+	font-size: 20px; 
+}
+
+.searchToggleBar .menuToggleIcon {
+	top: 5px;
+   	left: 3px;
+   	font-size: 20px;
+}
+
+.searchResult {
+	border-bottom: 3px solid black;
+}
+
+.searchResult .field {
+	margin: 5px 0;
+}
+
+.searchResult .field em {
+	font-weight: normal;
+	font-style: normal;
+	background-color: lightyellow;
+}
+
+img.viewImagesLink {
+	cursor: pointer;
+	width: auto;
+	max-height: 80%;
+}
+
+#manifest-search-form {
+	display: none;
+}
+
+h3.window-manifest-title, ul.slot-controls li {
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+div.panel-default {
+	border: 1px solid #c0c0c0;
+}
+
+.panel-default > .panel-heading {
+	background-color: #f9f9f9;
+	padding: 15px 25px 15px 20px;
+}
+
+#searchControl .panel-body {
+	padding: 15px 25px 15px 20px;
+}
+
+.panel-title a:hover, .panel-title a:focus {
+	text-decoration: none;
+	color: #333;
+}
+
+#searchPanel {
+	padding-left: 0;
+	width: 350px;
+	margin-top: 20px;
+	z-index: 3;
+	border-radius: 0;
+}	
+
+#searchPanel .panel, #searchPanel .panel-heading {
+	border-radius: 0;
+}
+
+#searchPanel .form-group label {
+	vertical-align: top;
+}
+
+/* hide html select lists & slider inputs fields, bootstrap js components are rendered in their place */
+#searchPanel select, #searchPanel input.slider {
+	visibility: hidden;
+}
+
+#searchPanel div.bootstrap-select {
+	width: auto;
+}
+
+#searchPanel button.dropdown-toggle, 
+#searchPanel button.dropdown-toggle:hover, 
+#searchPanel textarea,
+#searchPanel input[type="text"] {
+	width: 307px;
+    box-shadow: none;
+    border-radius: 2px;
+    padding: 10px 12px;
+    border: 1px solid #d3d3d3;
+    margin: 0;
+    height: 40px;
+    font-size: 12px;
+    background-color: #fff;
+    text-align: left;
+}
+
+.caret {
+	color: #e0e0e0;
+	border-top: 7px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+
+button.dropdown-toggle .caret {
+	position: absolute;
+	top: 20px;
+    right: 7px;
+}
+
+.breadcrumb-buttons button.dropdown-toggle .caret {
+	position: relative;
+	top: 0;
+	left: 4px;	
+}
+
+button.multiselect .caret {
+	top: 14px;
+}
+
+div.multiselect-options {
+	display: none;
+}
+
+.dropdown-menu {
+	border-radius: 2px;
+}
+
+.dropdown-menu li {
+	font-size: 16px;
+}
+
+#searchPanel ul.multiselect-container {
+	width: 200px;
+	overflow-x: auto !important;
+	right: -27px;
+}
+
+#searchResultsWrapper, #viewer {
+	/* width: 768px;	 */	
+	position: relative !important; /* mirador tries to make this fixed */
+	-webkit-transition: -webkit-width .9s ease;
+	-moz-transition: -moz-width .9s ease;
+	-ms-transition: -ms-width .9s ease;
+	-o-transition: -o-width .9s ease;
+	transition: width .9s ease;
+	margin: 20px;
+}
+
+#viewer .manifest-info {
+	border: 1px solid #c0c0c0;
+}
+
+#viewer .view-container {
+	border: 1px solid #c0c0c0;
+	border-top: none;
+}
+
+/* hide any default icons we don't use in Mirador - even though we configure it without these,
+when the user adds a slot to compare another image, all the defaults show up on the new slot */
+a.mirador-icon-toc, 
+a.mirador-osd-annotations-layer,
+.slot-controls li.new-object-option {
+	display: none !important;
+}
+
+#viewer .content-container {
+	margin-top: 47px;
+}
+
+#viewer .manifest-info {
+	background-color: #f5f5f5;
+}
+
+#searchResultsWrapper {
+	font-size: 14px;		
+	height: auto;
+}
+
+#viewer {
+	font-size: .7em;	
+}
+
+#viewer ,#metaDataPanel {
+	display: none;
+}
+
+.mirador-images {
+	max-height: 800px;
+}
+
+#metaDataPanel {
+	width: 575px;
+	font-size: 16px;
+	position: relative;
+	top: -8px;
+}
+
+#metaDataPanel label.heading {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#metaDataPanel ul.nav-tabs {
+	/* needed so Firefox doesn't wrap the tabs when the browser window is resized */
+	min-width: 575px;
+}
+
+#metaDataPanel ul.nav-tabs li a {	
+    padding: 6px 15px;
+}
+
+#metaDataPanel ul.nav-tabs li.active a {
+	border: 1px solid #c0c0c0;
+    border-bottom-color: transparent;
+    border-radius: 0;
+}
+
+#metaDataPanel .tab-content {
+    border: 1px solid #c0c0c0;
+    border-top-color: #ddd;
+    padding: 5px 15px;
+    background-color: #fff;
+    position: relative;
+    top: -1px;
+}
+
+#metaDataPanel .tab-pane {
+	padding: 15px 10px;	
+}
+
+#metaDataPanel .backToResults {
+	float: right;
+	margin-right: -7px;
+	top: 4px;
+	cursor: pointer;
+}
+
+#metaDataPanel .backToResults .glyphicon {
+	margin-right: 5px;
+}
+
+#metaDataPanel th {
+	font-size: 18px;
+}
+
+#metaDataPanel hr {
+	border-bottom: 1px solid #c0c0c0;
+}
+
+#metaDataPanel table {
+	clear: right;
+	margin-bottom: 15px;
+}
+
+#metaDataPanel table.indent {
+	margin-left: 15px;
+}
+
+#metaDataPanel td {
+	vertical-align: top;
+	padding: 5px 10px;
+}
+
+#metaDataPanel td:first-child {
+	padding-left: 0;
+	width: 120px;
+}
+
+#metaDataPanel td.metaLabel {		
+	border-right: 1px solid #c0c0c0;
+	min-width: 135px;
+}
+
+#metaDataPanel.folioMetaData td.metaLabel {		
+	min-width: 115px;
+}
+
+#metaDataPanel td p:first-child {
+	padding-top: 0;
+}
+
+#metaDataPanel .tab-content a, .noResults a {
+	color: #428bca;
+	word-break: break-word;
+}
+
+#metaDataPanel .tab-content a:hover {
+    text-decoration: underline;
+}
+
+#metaDataPanel a.btn, #metaDataPanel a.viafLink, #metaDataPanel a.btn:hover, #metaDataPanel a.viafLink:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+#metaDataPanel a p {
+	display: inline;
+}
+
+#metaDataPanel img.iiif-logo {
+	height: 20px; 
+	position: relative; 
+	top: -1px;
+}
+
+button.btn-backToResults, button.btn-backToResults:hover {
+	margin-top: -6px;
+	padding: 1px 10px 3px 10px;
+}
+
+#metaDataPanel .nav-tabs {
+	background-color: #f9f9f9;
+    border: 1px solid #c0c0c0;
+    padding: 17px 25px 0 35px;
+}
+
+#metaDataPanel .nav-tabs a {
+	color: #555;
+}
+
+#contents table:first-child {
+	margin-bottom: 5px;
+}
+
+#description .hideForFullDescription {
+	display: none;
+}
+
+/* this hides the big "Add" button on Mirador */
+.slotIconContainer {
+	display: none;
+}
+
+.mirador-icon-window-menu .fa-plus {
+	font-size: 17px;
+    color: #000;
+    top: 3px;
+    position: relative;
+    left: 2px;
+}
+
+.manifest-info li.remove-object-option {
+	/* we display our own close icon */
+	display: none !important;
+}
+
+.window-manifest-navigation {
+	width: 50%;	
+}
+
+.window-manifest-navigation a:hover {
+	color: #333;	
+}
+
+.mirador-main-menu-bar {
+	position: absolute;
+	left: 0;
+	max-width: 768px;
+}
+
+.mirador-viewer .metadata-item {
+	padding-top: 5px;
+}
+
+.mirador-viewer .metadata-label, .mirador-viewer .metadata-value {
+	display: inline;
+}
+
+.mirador-btn, .window-manifest-title {
+	margin-top: 15px;
+}
+
+.manifest-info {
+	height: 50px;
+}
+
+.workspace-container {
+	margin: 0;
+}
+
+.viewer-column {
+	padding: 0;
+}
+
+.bottom, .bottom-right {
+    position: absolute;
+    bottom: 0;
+    margin-right: 0;
+}
+
+.bottom-right {
+	right: 0;
+}
+
+.row-eq-height {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #e0e0e0;
+}
+
+hr.separateHighlightFields:first-child {
+	margin-top: 6px;
+}
+
+hr.separateHighlightFields {
+	margin: 3px 0 6px 0;
+}
+
+.searchHit {
+	padding: 20px 35px 10px 35px;
+	box-shadow: 0px 2px 1px rgba(0,0,0,.1);
+	background-color: #fff;
+	margin-bottom: 25px;
+}
+
+.searchHitSection {
+	margin-bottom: 8px;
+}
+
+.searchHitText {
+	margin-bottom: 5px;
+}
+
+/* some indexed data has HTML from CKEditor, don't want to display paragraph styles in a search hit */
+.searchHitText p {
+	padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+a.toggleHiddenMatches, a.toggleHiddenMatches:hover {
+	font-size: 12px;
+	color: #428bca;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.outlineThumbnail {
+	border: none;
+	padding: 0;
+}
+
+.dateRange {
+	border-radius: 2px;
+	background-color: #f2f2f2;
+	padding: 7px 20px;
+}	
+
+/* lighten the slider since on gray background */
+.slider.slider-horizontal .slider-handle {
+	width: 15px;
+    height: 15px;
+    margin-top: -3px;
+    opacity: 1;
+    background-image: none;
+    background-color: #84aad1;
+    border: 1px solid #7f9cbd;
+}
+
+.slider-selection {
+	background-color: #d8d8d8;
+	background-image: none;	
+}
+   
+.lcImage {
+	height: 19px;
+	top: -1px;
+	position: relative;
+}
+ 
+.activeIndicator {
+ 	display: inline-block; 
+ 	width: 20px; 
+ 	height: 20px; 
+ 	border-radius: 25px;
+ 	position: relative; 
+ 	top: 5px;  
+ 	margin-left: 5px;
+}
+ 
+.activeLabel {
+ 	font-size: 14px;
+ 	margin: 3px 10px 0 10px;
+}
+ 
+.new-search {
+ 	text-decoration: underline;
+ 	margin-right: 8px;
+}
+
+.editControls {
+	float: right;
+	clear: right;
+	margin-top: 10px;
+}
+
+.editControls a {
+	margin: 0;
+}
+
+img.responsive {
+	max-width: 80%;
+}
+ 
+#readingRoomUsageAgreement, #mustRegisterDialog {
+	display: none;
+}
+
+#vhmml-dialog a {
+	text-decoration: underline;
+}
+
+#vhmml-dialog h4 img {
+	width: 85px;
+	display: block;
+}
+
+.rrHelpReminderHeading {
+	font-style: italic;
+	font-size:large;
+	font-weight:bold;
+}
+
+.rrHelpReminder {
+	font-style: italic;
+	font-weight: normal;
+}
+
+.rrHelpSubheading {
+	font-weight:bold;	
+}
+
+
+h3.rrHelp {
+	text-decoration: none;
+}
+
+/* special font size rule for this icon because it comes from a different lib that the rest and is too small */
+.icon-photo-album:before {
+	left: -44px;
+    position: relative;
+    top: -39px;
+}
+
+a.descriptionRRLink, a.descriptionRRLink:visited {
+	text-decoration: none;
+	color: #428bca;;
+}
+a.descriptionRRLink:hover {
+	color: #23517f;
+	text-decoration: underline;
+}
+
+/*Special rules for RR description blue box with white text */
+a.descriptionRR:visited {
+	text-decoration: underline;
+	color: #fff;
+}
+a.descriptionRR:hover {
+	color: #72bc94;
+	text-decoration: none;
+}
+
+form.correctionsForm select[name="categories"] {
+	height: 102px;
+}
+

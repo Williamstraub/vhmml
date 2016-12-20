@@ -1,0 +1,6 @@
+great britain,england,scotland,wales,northern ireland,united kingdom
+israel,palestine,west bank,gaza
+iraq,irak
+timbuktu,tinbuktu,timbuctoo,timbuktoo,tombouctoo
+koran,coran,quran,qur'an
+ge'ez,geez,geʿez,ge`ez,gәʿәz,gә'әz,gә`әz,gәәz

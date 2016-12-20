@@ -1,0 +1,111 @@
+.paging-controls {
+	font-size: 12px;
+}
+
+.paging-controls hr {
+	border: 0;
+	border-top: 1px solid #d9d9d9;	
+}
+
+.searchResultsData {
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 5px;
+}
+
+.searchResultsData .total {
+	float: left;
+}
+
+.searchResultsData .sortByWrapper {
+	float: right;
+}
+
+.searchResultsData .sortByWrapper label {
+	font-size: 12px;
+    margin-right: 5px
+}
+
+.searchResultsData .sort {
+	position: relative;
+	top: -2px;
+}
+
+.searchResultsData .bootstrap-select.btn-group .dropdown-toggle .caret {
+	right: 8px;
+}
+
+.searchResultsData .bootstrap-select button, .searchResultsData .bootstrap-select {
+	width: 160px !important;
+}
+
+.paging-controls input[type="text"],
+.paging-controls .bootstrap-select button, 
+.paging-controls .bootstrap-select button.btn-default {
+	height: 28px;
+    background-color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 150px;
+    border: 1px solid #d3d3d3;
+    border-radius: 2px;
+}
+
+.searchResultsData .bootstrap-select ul.dropdown-menu li {
+	font-size: 12px;	
+}
+
+.searchResultsData .bootstrap-select ul.dropdown-menu li a {
+	padding: 3px 10px;
+}
+
+.paging-controls .iconButton {
+    padding: 0 2px 0 4px;
+    position: relative;
+    margin-left: 5px;
+    width: 28px;
+    height: 26px;
+    font-size: 8px;
+    top: -1px;
+}
+
+.paging-controls .pageSizeWrapper {
+	border-right: 1px solid #d9d9d9;
+	margin-right: 10px;
+	padding: 8px;
+	padding-right: 15px;
+}
+
+.paging-controls .iconButton .glyphicon:before {
+	position: relative;
+	left: -1px;
+}
+
+.paging-controls .sortDir {
+	top: 0px;
+}
+
+.paging-controls .pagingButtons input, 
+.paging-controls .pagingButtons .bootstrap-select,
+.paging-controls .pagingButtons .bootstrap-select button {
+	width: 60px !important;
+}
+
+.paging-controls label {
+	font-weight: normal;
+	margin-right: 8px;
+}
+
+.paging-controls .currentPage {
+	margin-right: 2px;
+}
+
+.paging-controls .previous,
+.paging-controls .previous:hover,
+.paging-controls .next,
+.paging-controls .next:hover {
+	padding: 8px;
+	text-decoration: none;
+	color: #333;
+}

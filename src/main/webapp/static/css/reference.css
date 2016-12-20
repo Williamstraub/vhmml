@@ -1,0 +1,19 @@
+#referenceEntryTable td {
+	padding: 5px;
+}
+
+.emailRefIcon + .popover {
+	max-width: none;
+}
+
+.emailRefIconLabel, .emailResponse {
+	margin-left: 10px;
+}
+
+.emailResponse {
+	display: none;
+}
+
+.emailResponse label {
+	margin-left: 5px;
+}

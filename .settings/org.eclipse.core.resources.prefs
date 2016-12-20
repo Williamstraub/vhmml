@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/db/migration/1.1/V1__vhmml_ddl_dml.sql=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/about.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/lexicon/help.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/readingRoom/advancedSearch.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/school/basics-paleography/overview.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/school/help.jsp=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

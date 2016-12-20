@@ -1,0 +1,33 @@
+.correctionsForm {
+	text-align: center;
+}
+
+.correctionsForm .row {
+	margin-bottom: 20px;
+}
+
+.correctionsForm label {
+	display: block;
+	text-align: center;
+	width: auto;
+}
+
+.correctionsForm textarea {
+	width: 100%;	
+}
+
+.correctionsForm input[type=radio] {
+	margin: 0 5px;
+}
+
+.correctionsForm input[type=radio] + label {
+	display: inline;
+}
+
+.contactEmailWrapper {
+	margin: 10px;
+}
+
+.correctionsForm .contactEmailWrapper label {
+	display: inline;
+}

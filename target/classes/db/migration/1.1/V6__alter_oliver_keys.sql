@@ -1,0 +1,4 @@
+ALTER TABLE `manuscripts` MODIFY `id` INT AUTO_INCREMENT;
+ALTER TABLE `manuscript_parts` MODIFY `id` INT AUTO_INCREMENT;
+ALTER TABLE `manuscript_texts` MODIFY `id` INT AUTO_INCREMENT;
+ALTER TABLE `manuscript_images` MODIFY `id` INT AUTO_INCREMENT;

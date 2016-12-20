@@ -1,0 +1,5 @@
+
+.icon-film-reel:before { content: '\61'; } /* 'a' */
+.icon-image:before { content: '\62'; } /* 'b' */
+.icon-book:before { content: '\63'; } /* 'c' */
+.icon-open-book:before { content: '\64'; } /* 'd' */

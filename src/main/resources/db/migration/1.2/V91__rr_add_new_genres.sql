@@ -1,0 +1,2 @@
+INSERT INTO reading_room_genres VALUES (null, 'Land surveys','http://www.getty.edu/vow/AATFullDisplay?find=land+survey&logic=AND&note=&english=N&prev_page=1&subjectid=300027257');
+INSERT INTO reading_room_genres VALUES (null, 'Land registers','http://www.getty.edu/vow/AATFullDisplay?find=land+registers&logic=AND&note=&english=N&prev_page=1&subjectid=300027247');

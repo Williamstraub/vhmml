@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="default-template" template="/WEB-INF/jsp/templates/site-template.jsp">
+	    <put-attribute name="pageCategory" value="home" cascade="true"/>	    	    
+		<put-attribute name="title" value="Virtual Hill Museum &amp; Manuscript Library" cascade="true"/>
+		<put-attribute name="header" value="/WEB-INF/jsp/templates/header.jsp" cascade="true"/>
+		<put-attribute name="menu" value="/WEB-INF/jsp/templates/menu.jsp" cascade="true"/>
+		<put-attribute name="body" value="" />
+		<put-attribute name="showBreadcrumbs" value="false" cascade="true"/>
+		<put-attribute name="breadcrumbButtons" value="" cascade="true"/>
+		<put-attribute name="footer" value="/WEB-INF/jsp/templates/footer.jsp" cascade="true"/>
+		<put-attribute name="footerHelp" value="" cascade="true"/>		
+	</definition>	
+	
+	<definition name="static/*" extends="default-template">
+		<put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />		
+	</definition>
+	
+	<definition name="error/*" extends="default-template">
+		<put-attribute name="body" value="/WEB-INF/jsp/error/{1}.jsp" />
+	</definition>
+	
+	<definition name="admin/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="admin" cascade="true"/>
+	    <put-attribute name="body" value="/WEB-INF/jsp/admin/{1}.jsp" />
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+	    <put-attribute name="breadcrumbButtons" value="/WEB-INF/jsp/admin/breadcrumbButtons.jsp" cascade="true"/>	    
+	</definition>
+	
+	<definition name="login/*" extends="default-template">
+		<put-attribute name="body" value="/WEB-INF/jsp/login/{1}.jsp" />
+	</definition>
+	
+	<definition name="registration/*" extends="default-template">
+	    <put-attribute name="body" value="/WEB-INF/jsp/registration/{1}.jsp" />	    
+	</definition>
+	
+	<definition name="user/*" extends="default-template">
+	    <put-attribute name="body" value="/WEB-INF/jsp/user/{1}.jsp" />	    
+	</definition>
+	
+	<definition name="school/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="school" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/school/{1}.jsp" />
+	</definition>	
+	
+	<definition name="lesson/*/*" extends="school/*">
+	    <put-attribute name="body" value="/WEB-INF/jsp/school/{1}/{2}.jsp" />    
+	</definition>
+	
+	<definition name="reference/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="reference" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+	    <put-attribute name="body" value="/WEB-INF/jsp/reference/{1}.jsp" />	    
+	</definition>	
+	
+	<definition name="readingRoom/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="reading-room" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/readingRoom/{1}.jsp" />
+		<put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+		<put-attribute name="footerHelp" value="/WEB-INF/jsp/readingRoom/footer-help.jsp" cascade="true"/>
+	</definition>
+	
+	<!-- we explicity define the help page so we can remove the footer help from the actual help page -->
+	<definition name="readingRoom/help" extends="default-template">
+	    <put-attribute name="pageCategory" value="reading-room" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/readingRoom/help.jsp" />
+		<put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+		<put-attribute name="footerHelp" value="" cascade="true"/>
+	</definition>
+	
+	<!-- catalog database is the admin functionality for Reading Room -->
+	<definition name="catalogDatabase/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="catalog-database" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/catalogDatabase/{1}.jsp" />
+		<put-attribute name="breadcrumbButtons" value="/WEB-INF/jsp/catalogDatabase/breadcrumbButtons.jsp" cascade="true"/>
+	</definition>
+	
+	<!-- we explicitly define the add/edit page so we can have different breadcrumb buttons -->
+	<definition name="catalogDatabase/add" extends="default-template">
+	    <put-attribute name="pageCategory" value="catalog-database" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/catalogDatabase/add.jsp" />
+		<put-attribute name="breadcrumbButtons" value="/WEB-INF/jsp/catalogDatabase/addObjectBreadcrumbButtons.jsp" cascade="true"/>
+	</definition>
+	
+	<definition name="lexicon/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="lexicon" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+	    <put-attribute name="body" value="/WEB-INF/jsp/lexicon/{1}.jsp" />	    
+	</definition>
+	
+	<definition name="folio/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="folio" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/folio/{1}.jsp" />
+	</definition>
+	
+	<definition name="folio/home" extends="default-template">
+	    <put-attribute name="pageCategory" value="folio" cascade="true"/>
+	    <put-attribute name="showBreadcrumbs" value="true" cascade="true"/>
+	    <put-attribute name="breadcrumbButtons" value="/WEB-INF/jsp/folio/breadcrumbButtons.jsp" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/folio/home.jsp" />
+		<put-attribute name="footerHelp" value="/WEB-INF/jsp/folio/footer-help.jsp" cascade="true"/>
+	</definition>
+	
+	<definition name="scriptorium/*" extends="default-template">
+	    <put-attribute name="pageCategory" value="scriptorium" cascade="true"/>
+		<put-attribute name="body" value="/WEB-INF/jsp/scriptorium/{1}.jsp" />
+	</definition>
+	
+	<definition name="404" extends="default-template">
+		<put-attribute name="body" value="/WEB-INF/jsp/error/404.jsp" />
+	</definition>
+	
+</tiles-definitions>

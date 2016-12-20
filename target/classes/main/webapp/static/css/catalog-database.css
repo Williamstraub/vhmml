@@ -1,0 +1,206 @@
+#readingRoomObjectForm {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.formSection {
+	border: 5px solid #7b5e7c;
+	padding: 25px;
+	border-radius: 10px;
+	clear: both;
+}
+
+.formSection:first-child {
+	padding: 25px 0;
+}
+
+.form-group.inline select, .form-group.inline input {
+	display: inline;
+} 
+
+.form-control {
+	max-width: 500px;
+	display: inline-block;
+}	
+
+.partContents, .contentItem  {
+	margin-bottom: 20px;	
+}
+
+input[type="checkbox"].form-control {
+	width: auto;
+	height: auto;
+	position: relative;
+	top: 10px;
+}
+
+input.form-control + i.catalog-database-icon {
+	left: 5px;
+}
+
+input.combo-field {
+	width: 315px;
+}
+
+select.combo-field {
+	width: 180px;
+	position: relative;
+}
+
+div.ui-groupbox-list-wrapper {
+	width: 215px;
+}
+
+.ui-groupbox-label {
+	text-align: left;	
+}
+
+div.ui-groupbox-scroll {
+	max-height: 183px;
+	width: auto !important;
+}
+
+div.ui-groupbox-buttons {
+	top: 80px !important;
+}
+
+select.groupbox {
+	display: none;
+}
+
+div.ui-groupbox-clear {
+	clear: none;
+}
+
+.groupedFields {
+	background-color: #aaa;
+    padding: 20px 0 5px 0;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.repeatableFieldGroup:first-child .removeField {
+	display: none;
+}
+
+.repeatableFieldButtons {
+	float: right;
+}
+
+.modal-body .form-group {
+	overflow: auto;
+}	
+
+.formSectionToggle {
+	display: inline-block;
+}
+
+.formSectionToggle .glyphicon {
+	top: 5px;		
+}
+ 
+.cityId.addListOption, .repositoryId.addListOption {
+	display: none;
+}
+
+#savingMessage {
+	position: fixed; 
+	top: 0; 
+	left: 46%; 
+	background-color: white; 
+	z-index: 1000;
+	display: none;
+}
+
+.dimension-label {
+	margin: 0 6px 0 10px;
+}
+
+.dimension-input {
+	width: 65px;
+}
+
+div.buttonRow {
+	margin: 0 0 20px 0;
+	float: right;
+}
+
+label.inlineLabel {
+	width: 56px;
+	font-size: 13px;
+}	
+
+.dateYear {
+	width: 61px;
+}
+
+.dateMonth, .dateDay {
+	width: 125px;
+}	
+
+button label {
+	width: auto;
+	font: inherit;
+	cursor: pointer;
+}
+
+.btn-group li {
+	cursor: pointer;
+}
+
+.note {
+	font-size: 12px;
+	text-align: left;
+}
+
+.imageIconDialog {
+	width: 768px;
+}
+
+.pageIcon {
+	padding: 10px;
+	cursor: pointer;
+}
+
+#toggleAll,
+.objectData, 
+.objectParts, 
+.partContents,
+.archivalContent,
+.objectPart.MANUSCRIPT .hideForManuscript, 
+.objectPart.UNKNOWN .hideForManuscript,
+.objectPart.PRINTED .hideForPrinted,
+.objectData.ARCHIVAL_OBJECT .hideForArchival {
+	display: none;
+}
+
+.non-editable {
+	line-height: 32px;
+}
+
+label[for="recordType"] {
+	text-align: left !important;
+}
+ 
+.tooltip-inner {
+	text-align: left;
+}
+
+.deprecated {
+	left: -6px;
+   	position: relative
+}
+
+.importedValue + .glyphicon-remove-circle {
+	cursor: pointer;
+	position: relative;
+	top: 4px;
+}
+
+div.cke {
+	display: inline-block;
+}
+
+.icons .glyphicon {
+	cursor: pointer;
+}

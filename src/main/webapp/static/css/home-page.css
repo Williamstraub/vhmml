@@ -1,0 +1,168 @@
+.carousel, .main-content {
+	margin: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.container.page-wrap {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.main-content {
+	margin-bottom: 10px;
+	padding-top: 80px;
+}
+
+/*change height of carousel with this max-height*/
+.carousel-inner .item {
+	max-height: 250px;
+}
+
+.carousel-inner .item img, .active {
+	width: 100%;
+	cursor: pointer;
+}
+
+.carousel-control {
+	width: 7%;	
+}
+
+.carousel-control .glyphicon {
+	display: none;
+}
+
+.carousel-indicators {
+	width: 100%;
+    text-align: center;
+    left: -15px;
+    margin-left: 0;
+    bottom: -5px;
+}
+
+.carousel-indicators li {
+	background-color: #fff;
+	border: none;
+}
+
+.carousel-indicators li.active {
+	background-color: #daab66;
+}
+
+@media screen and (max-width: 992px) {
+	.carousel-indicators {
+	    bottom: -10px;
+	    left: -10px;
+	}
+}
+
+.carousel-caption {	
+	background-color: rgba(0,0,0,0.75);	
+	width: 30%;
+	height: 100%;
+	left: 70%;
+	right: 0;
+	top: 0;
+	text-align: left;	
+	padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.carousel-caption h3 {
+	margin-top: 0;
+	font-size: 15px;
+	/*if we decide later to change carousel description to not Loto serif then remove next line: */
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+.carousel-caption button {
+	border: 3px solid #fff;
+	text-align: center;
+	align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background: transparent;
+    margin: 0;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 992px) {
+	.carousel-caption {
+		padding: 30px;	
+	}
+	
+	.carousel-caption h3 {
+		font-size: 12px;
+	}
+	
+	.carousel-caption button {
+		border: 2px solid #fff;
+		padding: 5px 10px;
+		font-size: 12px;
+	}	
+}
+
+@media screen and (max-width: 768px) {
+	
+	.carousel-caption h3 {
+		font-size: 11px;
+	}
+	
+	.carousel-caption button {
+		padding: 3px 8px;
+    	font-size: 11px
+	}	
+}
+
+.card {
+	width: 415px;
+	height: 415px;
+	margin: 20px;
+	margin-top: 0;
+    background: #fff;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-content {
+	padding: 10px 30px; 
+	font-size: 12px; 
+	color: #777; 
+	text-align: justify;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.card .link-wrapper {
+	text-align: center;
+	margin: 10px 0;
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+}
+
+.card .card-link {	
+	border-bottom: 3px solid #daab66;
+	padding-bottom: 5px;
+	font-size: 12px;
+}
+
+.card .section-title {
+	text-align: center; 
+	padding: 6px; 
+	padding-bottom: 3px; 
+	color: #000;
+}
+
+.card a {
+	color: #daab66;
+}
+
+.card .link-spacer {
+	color: #daab66;
+    margin-left: 3px;
+    margin-right: 2px;
+}
